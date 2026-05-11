@@ -10,10 +10,12 @@ const Footer = () => {
                 </div>
 
                 <div className="flex gap-8 text-sm text-gray-400 font-medium">
-                    <a href="#" className="hover:text-[#002060] transition-colors cursor-pointer">
-                        Privacy Policy
+                    <a
+                        href="https://www.iubenda.com/privacy-policy/64469731"
+                        className="iubenda-embed iubenda-noiframe hover:text-[#002060] transition-colors cursor-pointer"
+                        title="Privacy Policy"
+                        >Privacy Policy
                     </a>
-                    {/* Cookie Policy rimossa come richiesto */}
                 </div>
 
             </div>

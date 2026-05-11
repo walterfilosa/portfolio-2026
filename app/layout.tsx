@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 // IMPORTANTE: Aggiungi questa riga qui sotto
 import Navbar from "../components/Navbar";
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,10 @@ export default function RootLayout({
         <div className="relative z-10">
             {children}
         </div>
+        <Script
+            src="https://embeds.iubenda.com/widgets/bde6087c-690f-4d30-a838-e55df955e104.js"
+            strategy="lazyOnload"
+        />
         </body>
         </html>
     );
