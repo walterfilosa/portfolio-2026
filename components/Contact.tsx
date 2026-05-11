@@ -107,7 +107,7 @@ const Contact = () => {
                   <AlertCircle size={20} /> Riprova
                 </span>
                             ) : (
-                                <span className="flex items-center gap-2">
+                                <span className="flex items-center gap-2 cursor-pointer">
                   <Send size={18} /> Invia Messaggio
                 </span>
                             )}

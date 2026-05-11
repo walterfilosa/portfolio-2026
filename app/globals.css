@@ -4,12 +4,6 @@
   color-scheme: light;
 }
 
-@import "tailwindcss";
-
-:root {
-  color-scheme: light;
-}
-
 @keyframes float {
   0% { transform: translate(0, 0); }
   50% { transform: translate(3%, 2%); }
@@ -156,4 +150,23 @@ nav a, nav span {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+}
+
+  /* Il velo che nasconde il testo mentre sale */
+.top-fade-shroud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Altezza del velo: copre la navbar e crea la sfumatura */
+  height: 160px;
+  /* Gradiente: dal colore dello sfondo verso il trasparente */
+  background: linear-gradient(
+          to bottom,
+          #F8F9FC 0%,
+          #F8F9FC 40%, /* Copre totalmente dietro la navbar */
+          rgba(248, 249, 252, 0) 100% /* Sfuma gradualmente */
+  );
+  pointer-events: none; /* Fondamentale: permette di cliccare ciò che sta sotto */
+  z-index: 50; /* Deve stare SOTTO la navbar (z-100) ma SOPRA il contenuto */
 }
