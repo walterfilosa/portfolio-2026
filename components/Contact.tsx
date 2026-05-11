@@ -112,6 +112,16 @@ const Contact = () => {
                 </span>
                             )}
                         </button>
+                        <p className="mt-4 text-[11px] text-gray-400 leading-relaxed">
+                            Premendo invio, dichiari di aver preso visione della{" "}
+                            <a
+                                href="https://www.iubenda.com/privacy-policy/IL_TUO_ID"
+                                className="iubenda-embed underline hover:text-[#002060] transition-colors"
+                            >
+                                Privacy Policy
+                            </a>{" "}
+                            e acconsenti al trattamento dei dati personali secondo il GDPR.
+                        </p>
                     </form>
                 </motion.div>
             </div>
