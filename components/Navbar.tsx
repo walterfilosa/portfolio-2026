@@ -46,14 +46,14 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="fixed top-6 left-0 w-full z-[100] px-6 pointer-events-none">
+        <nav className="fixed top-6 left-0 w-full z-[100] px-4 md:px-6 pointer-events-none">
             <div className="max-w-7xl mx-auto glass-panel px-4 py-1.5 flex items-center justify-between pointer-events-auto">
 
-                <div className="text-[#002060] font-bold text-xl ml-4 cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+                <div className="text-[#002060] font-bold text-xl ml-4 mr-4 shrink-0">
                     WF
                 </div>
 
-                <ul className="flex items-center gap-1">
+                <ul className="flex items-center gap-1 overflow-x-auto no-scrollbar flex-nowrap pr-4">
                     {navLinks.map((link) => {
                         const isActive = activeSection === link.id;
                         const isHovered = hoveredSection === link.id;
@@ -63,18 +63,17 @@ const Navbar = () => {
                                 key={link.id}
                                 onMouseEnter={() => setHoveredSection(link.id)}
                                 onMouseLeave={() => setHoveredSection(null)}
-                                className="relative"
+                                className="relative shrink-0"
                             >
                                 <a
                                     href={`#${link.id}`}
-                                    className={`relative z-10 px-4 py-2 text-sm font-semibold transition-colors duration-500 cursor-pointer block ${
+                                    className={`relative z-10 px-4 py-2 text-sm font-semibold transition-colors duration-500 cursor-pointer block whitespace-nowrap${
                                         isActive || isHovered ? 'text-[#002060]' : 'text-gray-500'
                                     }`}
                                 >
                                     {link.name}
                                 </a>
 
-                                {/* Pillola Animata */}
                                 {(isActive || isHovered) && (
                                     <motion.div
                                         layoutId="navPill"
@@ -89,7 +88,7 @@ const Navbar = () => {
                                             damping: 35,
                                             mass: 1
                                         }}
-                                        className="absolute inset-0 rounded-full z-0 shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-[0.5px] border-white/60"
+                                        className="absolute inset-0 rounded-full z-0 shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-[0.5px] border-white/60 bg-white/70"
                                         style={{
                                             backdropFilter: "blur(10px)",
                                             WebkitBackdropFilter: "blur(10px)",

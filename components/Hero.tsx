@@ -20,7 +20,7 @@ const Hero = () => {
                 </h1>
 
                 <p className="text-lg md:text-xl text-gray-500 mb-5 font-light">
-                    Studente di Informatica @Federico II | Web Developer | Aspirante Software Engineer
+                    Computer Science Student @Federico II | Web Developer | Aspiring Software Engineer
                 </p>
 
                 <div className="flex items-center justify-center gap-2 text-gray-400 mb-8">

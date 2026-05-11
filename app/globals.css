@@ -130,3 +130,30 @@ nav a, nav span {
   will-change: color;
   backface-visibility: hidden;
 }
+
+/* app/globals.css */
+
+.iubenda-embed {
+  all: unset !important; /* Rimuove lo stile forzato di Iubenda */
+  font-family: inherit !important;
+  font-size: inherit !important;
+  color: inherit !important;
+  cursor: pointer !important;
+  transition: color 0.3s ease !important;
+}
+
+.iubenda-embed:hover {
+  color: #002060 !important; /* Forza il tuo blu navy anche sul widget */
+}
+
+/* app/globals.css */
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
