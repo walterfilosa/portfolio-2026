@@ -1,26 +1,132 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(3%, 2%); }
+  100% { transform: translate(0, 0); }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F8F9FC;
+  position: relative;
+  overflow-x: hidden;
+  color: #111827;
+  min-height: 100vh;
+}
+
+body::before, body::after {
+  content: "";
+  position: fixed;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -1;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+body::before {
+  background: #002060;
+  top: -200px;
+  left: -200px;
+  animation: float 15s ease-in-out infinite;
+}
+
+body::after {
+  background: #26d0ce;
+  bottom: -200px;
+  right: -200px;
+  animation: float 20s ease-in-out infinite reverse;
+}
+
+/* app/globals.css */
+
+.glass-panel {
+  /* Opacità quasi nulla: solo il 5-10% di bianco per dare un senso di superficie */
+  background: rgba(255, 255, 255, 0.05) !important;
+
+  /* Elevata saturazione per far risaltare i colori dello sfondo (globi Navy e Cyan) */
+  backdrop-filter: blur(25px) saturate(210%) !important;
+  -webkit-backdrop-filter: blur(25px) saturate(210%) !important;
+
+  /* Bordo quasi invisibile: serve solo a definire il perimetro */
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 1.5rem !important;
+
+  /* Ombra leggerissima e fredda */
+  box-shadow:
+          0 0 0 1px rgba(0, 0, 0, 0.02),
+          0 4px 12px -2px rgba(0, 0, 0, 0.04) !important;
+
+  /* Riflesso sottile sul bordo superiore per simulare lo spessore della lente */
+  border-top: 1.5px solid rgba(255, 255, 255, 0.3) !important;
+
+  border-radius: 1.5rem;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  overflow: hidden;
+  position: relative;
+}
+
+.glass-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+  );
+  transition: 0.6s;
+  pointer-events: none;
+}
+
+.group:hover .glass-panel::before {
+  left: 100%;
+}
+
+/* Hover per le schede dei Progetti: il vetro diventa leggermente più denso */
+.group:hover .glass-panel {
+  /* Sollevamento e ombra profonda bluastra */
+  box-shadow: 0 25px 50px -12px rgba(0, 32, 96, 0.15) !important;
+  border: 1px solid rgba(0, 32, 96, 0.2) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  transform: translateY(-4px); /* Aggiungiamo anche un piccolo spostamento fluido qui */
+}
+
+/* app/globals.css */
+nav {
+  isolation: isolate;
+}
+
+nav a, nav span {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  perspective: 1000px;
+}
+
+.nav-link-active {
+  text-shadow: 0 0 15px rgba(0, 32, 96, 0.2);
+}
+
+.relative.z-10 {
+  will-change: color;
+  backface-visibility: hidden;
 }
