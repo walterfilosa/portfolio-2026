@@ -14,10 +14,15 @@ const Contact = () => {
 
         setStatus('sending');
 
+        const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string;
+        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string;
+        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string;
+
         emailjs.sendForm(
-            process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-            process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-            process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+            serviceId,
+            templateId,
+            formRef.current!,
+            publicKey
         )
             .then(() => {
                 setStatus('success');
