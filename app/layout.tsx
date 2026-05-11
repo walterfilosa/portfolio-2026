@@ -32,7 +32,6 @@ export default function RootLayout({
         <Script
             src="https://embeds.iubenda.com/widgets/bde6087c-690f-4d30-a838-e55df955e104.js"
             strategy="lazyOnload"
-            position="float-bottom-center"
         />
         </body>
         </html>
