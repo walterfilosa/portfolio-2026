@@ -16,7 +16,7 @@ const projectsData = [
         endDate: "Febbraio 2024", // Solo data di fine
         description: "Sistema per la gestione della logistica e delle spedizioni merci. Pianificazione delle spedizioni basata su disponibilità, peso e veicoli.",
         tech: ["Java", "Swing", "PostgreSQL", "OOP"],
-        githubUrl: "https://github.com/walterfilosa/UninaDelivery"
+        githubUrl: "https://github.com/walterfilosa/Progetto---UninaDelivery---BasiDiDati.git"
     }
 ];
 
