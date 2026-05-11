@@ -52,7 +52,6 @@ const Contact = () => {
                         onSubmit={sendEmail}
                         className="glass-panel p-8 md:p-10 flex flex-col gap-6 relative overflow-hidden"
                     >
-                        {/* Overlay di Successo iOS Style */}
                         <AnimatePresence>
                             {status === 'success' && (
                                 <motion.div
@@ -113,7 +112,7 @@ const Contact = () => {
                             )}
                         </button>
                         <p className="mt-4 text-[11px] text-gray-400 leading-relaxed">
-                            Premendo invio, dichiari di aver preso visione della{" "}
+                            Premendo Invio, dichiari di aver preso visione della{" "}
                             <a
                                 href="https://www.iubenda.com/privacy-policy/IL_TUO_ID"
                                 className="iubenda-embed underline hover:text-[#002060] transition-colors"

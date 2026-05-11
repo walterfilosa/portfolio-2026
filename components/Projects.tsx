@@ -6,14 +6,14 @@ import { ExternalLink } from 'lucide-react';
 const projectsData = [
     {
         title: "BugBoard26",
-        endDate: "Gennaio 2026", // Solo data di fine
+        endDate: "Gennaio 2026",
         description: "Piattaforma collaborativa per la gestione di issue in progetti software. Permette di segnalare problemi, monitorare lo stato e assegnare task al team.",
         tech: ["Java", "Spring Boot", "React", "PostgreSQL"],
         githubUrl: "https://github.com/walterfilosa/BugBoard26"
     },
     {
         title: "Unina Delivery",
-        endDate: "Febbraio 2024", // Solo data di fine
+        endDate: "Febbraio 2024",
         description: "Sistema per la gestione della logistica e delle spedizioni merci. Pianificazione delle spedizioni basata su disponibilità, peso e veicoli.",
         tech: ["Java", "Swing", "PostgreSQL", "OOP"],
         githubUrl: "https://github.com/walterfilosa/Progetto---UninaDelivery---BasiDiDati.git"
@@ -42,14 +42,14 @@ const Projects = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block h-full group cursor-pointer" // Cursore mano
+                        className="block h-full group cursor-pointer"
                     >
                         <motion.div
                             whileHover={{
-                                y: -10, // Si alza verso l'alto
-                                scale: 1.02, // Si ingrandisce leggermente
+                                y: -10,
+                                scale: 1.02,
                             }}
-                            transition={{ type: "spring", stiffness: 400, damping: 17 }} // Molla reattiva
+                            transition={{ type: "spring", stiffness: 400, damping: 17 }}
                             className="glass-panel p-8 flex flex-col h-full relative"
                         >
                             <div className="absolute top-6 right-6 text-gray-300 group-hover:text-[#002060] transition-colors">
@@ -67,7 +67,6 @@ const Projects = () => {
                                 {project.description}
                             </p>
 
-                            {/* Badge a pillola */}
                             <div className="flex flex-wrap gap-2 mt-auto">
                                 {project.tech.map((tech, i) => (
                                     <span

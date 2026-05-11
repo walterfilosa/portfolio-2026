@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram, FaBehance } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6'; // Icona specifica per X
+import { FaXTwitter } from 'react-icons/fa6';
 import { SiCredly } from 'react-icons/si';
 
 const Hero = () => {
@@ -37,7 +37,6 @@ const Hero = () => {
                     </a>
                 </div>
 
-                {/* Griglia Social Espansa */}
                 <div className="flex flex-wrap gap-6 md:gap-8 justify-center items-center">
                     <a href="https://github.com/walterfilosa" target="_blank" rel="noreferrer" className="p-2 text-gray-400 hover:text-[#002060] transition-colors cursor-pointer">
                         <FaGithub size={28} />

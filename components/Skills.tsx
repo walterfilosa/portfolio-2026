@@ -3,7 +3,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Cpu, Database, Layout, Lightbulb, Server } from 'lucide-react';
 
-// Organizziamo le tue competenze in categorie logiche
 const skillsData = [
     {
         title: "Linguaggi",
@@ -95,7 +94,6 @@ const Skills = () => {
                 </p>
             </motion.div>
 
-            {/* Griglia a 3 colonne su desktop, 2 su tablet, 1 su mobile */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {skillsData.map((category, index) => (
                     <motion.div
@@ -104,7 +102,7 @@ const Skills = () => {
                             scale: 1.05,
                             backgroundColor: "rgba(255, 255, 255, 0.18)"
                         }}
-                        whileTap={{ scale: 0.98 }} // Effetto pressione al click
+                        whileTap={{ scale: 0.98 }}
                         className="group glass-panel p-8 cursor-default"
                     >
                         {category.icon}

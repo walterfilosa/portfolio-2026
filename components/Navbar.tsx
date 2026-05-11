@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
     { name: "Home", id: "hero" },
@@ -15,17 +15,14 @@ const Navbar = () => {
     const [hoveredSection, setHoveredSection] = useState<string | null>(null);
 
     useEffect(() => {
-        // Configurazione dell'Observer
         const options = {
             root: null,
-            // Definiamo una "striscia" centrale: la sezione attiva è quella che occupa il centro
             rootMargin: '-20% 0px -70% 0px',
             threshold: 0
         };
 
         const handleIntersection = (entries: IntersectionObserverEntry[]) => {
             entries.forEach((entry) => {
-                // Se la sezione entra nella zona definita, aggiorna lo stato
                 if (entry.isIntersecting) {
                     setActiveSection(entry.target.id);
                 }
@@ -34,7 +31,6 @@ const Navbar = () => {
 
         const observer = new IntersectionObserver(handleIntersection, options);
 
-        // Cerchiamo le sezioni nel DOM e iniziamo ad osservarle
         navLinks.forEach((link) => {
             const element = document.getElementById(link.id);
             if (element) {
@@ -44,6 +40,13 @@ const Navbar = () => {
 
         return () => observer.disconnect();
     }, []);
+
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
 
     return (
         <nav className="fixed top-6 left-0 w-full z-[100] px-4 md:px-6 pointer-events-none">
@@ -101,6 +104,10 @@ const Navbar = () => {
                 </ul>
 
                 <div className="hidden md:block mr-4 w-8" />
+                <motion.div
+                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#26d0ce] to-[#002060] origin-left"
+                    style={{ scaleX }}
+                />
             </div>
         </nav>
     );

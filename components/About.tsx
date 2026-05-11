@@ -8,8 +8,8 @@ const timelineData = [
         id: 1,
         title: "Laurea Triennale in Informatica",
         organization: "Università degli Studi di Napoli Federico II",
-        period: "Settembre 2021 – Gennaio 2026",
-        description: "Percorso accademico focalizzato su Ingegneria del Software, Algoritmi, Basi di Dati e Sistemi Operativi presso il dipartimento DIETI.",
+        period: "IN CORSO",
+        description: "Esami in rilievo: Ingegneria del Software, Algoritmi, Basi di Dati e Sistemi Operativi. DIETI",
         icon: <GraduationCap size={20} className="text-[#002060]" />
     },
     {
@@ -17,7 +17,7 @@ const timelineData = [
         title: "Diploma di Maturità",
         organization: "Liceo Scientifico - Classico 'E. Torricelli'",
         period: "Settembre 2016 – Giugno 2021",
-        description: "Formazione scientifica con focus su matematica, fisica e logica.",
+        description: "",
         icon: <BookOpen size={20} className="text-[#002060]" />
     }
 ];
@@ -39,9 +39,7 @@ const About = () => {
                 <p className="text-gray-500 text-lg">La mia formazione accademica.</p>
             </motion.div>
 
-            {/* Timeline Centrata a Tutta Larghezza */}
             <div className="max-w-4xl mx-auto relative">
-                {/* Linea verticale */}
                 <div className="absolute left-[19px] md:left-[27px] top-4 bottom-4 w-[2px] bg-gray-200/50 rounded-full z-0"></div>
 
                 <div className="flex flex-col gap-10 relative z-10">
@@ -54,12 +52,10 @@ const About = () => {
                             transition={{ duration: 0.5, delay: index * 0.2 }}
                             className="flex gap-4 md:gap-8"
                         >
-                            {/* Icona circolare */}
                             <div className="flex-shrink-0 w-10 h-10 md:w-14 md:h-14 rounded-full bg-white/50 border border-white/20 shadow-sm flex items-center justify-center relative mt-1 backdrop-blur-sm">
                                 {item.icon}
                             </div>
 
-                            {/* Card con bordo arrotondato e stile Crystal */}
                             <div className="glass-panel p-8 flex-grow rounded-[2rem]">
                 <span className="text-sm font-bold text-[#002060] mb-2 block uppercase tracking-wider">
                   {item.period}

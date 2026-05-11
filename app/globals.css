@@ -46,26 +46,19 @@ body::after {
   animation: float 20s ease-in-out infinite reverse;
 }
 
-/* app/globals.css */
-
 .glass-panel {
-  /* Opacità quasi nulla: solo il 5-10% di bianco per dare un senso di superficie */
   background: rgba(255, 255, 255, 0.05) !important;
 
-  /* Elevata saturazione per far risaltare i colori dello sfondo (globi Navy e Cyan) */
   backdrop-filter: blur(25px) saturate(210%) !important;
   -webkit-backdrop-filter: blur(25px) saturate(210%) !important;
 
-  /* Bordo quasi invisibile: serve solo a definire il perimetro */
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
   border-radius: 1.5rem !important;
 
-  /* Ombra leggerissima e fredda */
   box-shadow:
           0 0 0 1px rgba(0, 0, 0, 0.02),
           0 4px 12px -2px rgba(0, 0, 0, 0.04) !important;
 
-  /* Riflesso sottile sul bordo superiore per simulare lo spessore della lente */
   border-top: 1.5px solid rgba(255, 255, 255, 0.3) !important;
 
   border-radius: 1.5rem;
@@ -95,16 +88,13 @@ body::after {
   left: 100%;
 }
 
-/* Hover per le schede dei Progetti: il vetro diventa leggermente più denso */
 .group:hover .glass-panel {
-  /* Sollevamento e ombra profonda bluastra */
   box-shadow: 0 25px 50px -12px rgba(0, 32, 96, 0.15) !important;
   border: 1px solid rgba(0, 32, 96, 0.2) !important;
   background: rgba(255, 255, 255, 0.15) !important;
-  transform: translateY(-4px); /* Aggiungiamo anche un piccolo spostamento fluido qui */
+  transform: translateY(-4px);
 }
 
-/* app/globals.css */
 nav {
   isolation: isolate;
 }
@@ -125,10 +115,8 @@ nav a, nav span {
   backface-visibility: hidden;
 }
 
-/* app/globals.css */
-
 .iubenda-embed {
-  all: unset !important; /* Rimuove lo stile forzato di Iubenda */
+  all: unset !important;
   font-family: inherit !important;
   font-size: inherit !important;
   color: inherit !important;
@@ -137,10 +125,8 @@ nav a, nav span {
 }
 
 .iubenda-embed:hover {
-  color: #002060 !important; /* Forza il tuo blu navy anche sul widget */
+  color: #002060 !important;
 }
-
-/* app/globals.css */
 
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
@@ -152,21 +138,18 @@ nav a, nav span {
   }
 }
 
-  /* Il velo che nasconde il testo mentre sale */
 .top-fade-shroud {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  /* Altezza del velo: copre la navbar e crea la sfumatura */
   height: 160px;
-  /* Gradiente: dal colore dello sfondo verso il trasparente */
   background: linear-gradient(
           to bottom,
           #F8F9FC 0%,
-          #F8F9FC 40%, /* Copre totalmente dietro la navbar */
-          rgba(248, 249, 252, 0) 100% /* Sfuma gradualmente */
+          #F8F9FC 40%,
+          rgba(248, 249, 252, 0) 100%
   );
-  pointer-events: none; /* Fondamentale: permette di cliccare ciò che sta sotto */
-  z-index: 50; /* Deve stare SOTTO la navbar (z-100) ma SOPRA il contenuto */
+  pointer-events: none;
+  z-index: 50;
 }
