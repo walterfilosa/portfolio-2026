@@ -34,7 +34,6 @@ const Navbar = () => {
         }
     }, [activeSection]);
 
-    // Effetto 2: Intersection Observer + Sensore Fine Pagina
     useEffect(() => {
         const options = {
             root: null,

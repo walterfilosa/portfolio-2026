@@ -37,6 +37,8 @@ const Hero = () => {
                     </a>
                 </div>
 
+
+
                 <div className="flex flex-wrap gap-6 md:gap-8 justify-center items-center">
                     <a href="https://github.com/walterfilosa" target="_blank" rel="noreferrer" className="p-2 text-gray-400 hover:text-[#002060] transition-colors cursor-pointer">
                         <FaGithub size={28} />
