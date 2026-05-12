@@ -1,5 +1,5 @@
 "use client";
-import { Mail, LinkedIn, GitHub } from "lucide-react";
+import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram, FaBehance } from 'react-icons/fa';
 
 export default function Contact() {
