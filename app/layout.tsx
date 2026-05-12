@@ -7,8 +7,33 @@ import Script from 'next/script';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Walter Filosa | Portfolio",
-    description: "Portfolio di Walter Filosa, Studente di Informatica e aspirante Software Engineer",
+    title: "Walter Filosa | Front-End Developer",
+    description: "Portfolio di Walter Filosa, studente di Informatica e Front-End Developer. Specializzato in interfacce moderne, React e Next.js.",
+    keywords: [
+        "Walter Filosa",
+        "Front-End Developer",
+        "Sviluppatore Web",
+        "React",
+        "Next.js",
+        "Portfolio",
+        "Informatica",
+        "UI/UX Design"
+    ],
+    authors: [{ name: "Walter Filosa" }],
+    creator: "Walter Filosa",
+    openGraph: {
+        type: "website",
+        locale: "it_IT",
+        url: "",
+        title: "Walter Filosa | Computer Science Student",
+        description: "Esplora i miei progetti e il mio percorso nello sviluppo web.",
+        siteName: "Walter Filosa Portfolio"
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Walter Filosa | Computer Science Student",
+        description: "Esplora i miei progetti e il mio percorso nello sviluppo web.",
+    },
 };
 
 export default function RootLayout({

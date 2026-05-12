@@ -30,7 +30,7 @@ const Hero = () => {
 
                 <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
                     <a
-                        href="#contact"
+                        href="#contatti"
                         className="bg-[#002060] text-white px-10 py-4 rounded-full font-medium shadow-xl hover:bg-[#002060]/90 hover:scale-105 transition-all duration-300 flex items-center gap-2 cursor-pointer"
                     >
                         Contattami

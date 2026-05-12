@@ -153,3 +153,15 @@ nav a, nav span {
   pointer-events: none;
   z-index: 50;
 }
+
+/* app/globals.css */
+
+.ios-mask-container {
+  /* Crea la zona invisibile solo nei primi 100px dello schermo */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0px, transparent 80px, black 130px);
+  mask-image: linear-gradient(to bottom, transparent 0px, transparent 80px, black 130px);
+
+  /* Fondamentale: ancora la maschera allo schermo (viewport), non al contenuto */
+  -webkit-mask-attachment: fixed;
+  mask-attachment: fixed;
+}
