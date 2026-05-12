@@ -7,7 +7,7 @@ const timelineData = [
     {
         id: 1,
         title: "Laurea Triennale in Informatica",
-        organization: "Università degli Studi di Napoli Federico II",
+        organization: 'Università degli Studi di Napoli "Federico II"',
         period: "IN CORSO",
         description: "Esami in rilievo: Ingegneria del Software, Algoritmi, Basi di Dati e Sistemi Operativi. DIETI",
         icon: <GraduationCap size={20} className="text-[#002060]" />
@@ -15,7 +15,7 @@ const timelineData = [
     {
         id: 2,
         title: "Diploma di Maturità",
-        organization: "Liceo Scientifico - Classico 'E. Torricelli'",
+        organization: 'Liceo Scientifico - Classico "E. Torricelli"',
         period: "Settembre 2016 – Giugno 2021",
         description: "",
         icon: <BookOpen size={20} className="text-[#002060]" />
