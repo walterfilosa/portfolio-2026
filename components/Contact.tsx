@@ -10,6 +10,8 @@ export default function Contact() {
             link: "mailto:walterfilosa03@gmail.com",
             icona: <Mail className="w-8 h-8 text-[#002060]" />,
         },
+
+
         {
             nome: "LinkedIn",
             valore: "",
